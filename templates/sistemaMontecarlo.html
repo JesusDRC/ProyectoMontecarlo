@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block title %} Montecarlo {% endblock %}
+{% block content %}
+
+<center>
+    <br>
+    <h4 style="font-family:monospace;"><strong>Montecarlo</strong></h4>
+    <hr>
+    {% if error %}
+    <div class="alert alert-success" role="alert">
+        {{ error }}
+    </div>
+    {% endif %}
+    <br><br>
+    <div class="card" style="width: 40rem;">
+        <div class="card-body">
+            <form enctype="multipart/form-data" method="POST" action="{{url_for('calcularMontecarlo')}}"><br>
+                <div class="col-sm-12">
+                    <div class="form-row">
+    
+                        <legend class="text-center header"><strong>Método congruencial lineal</strong></legend><br>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Número iteraciones (n)</label>
+                            <input name="numeroIteraciones" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Semilla (X0)</label>
+                            <input name="semilla" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Multiplicador (a)</label>
+                            <input name="multiplicador" type="number" class="form-control" id="validationDefault01"
+                                required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault02">Incremento (c)</label>
+                            <input name="incremento" type="number" class="form-control" id="validationDefault02" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Módulo (m)</label>
+                            <input name="modulo" type="number" class="form-control" id="validationDefault01" required>
+                        </div><br>
+                        <legend class="text-center header"><strong>Subir archivo</strong></legend><br>
+                        <div class="form-row">
+                            <div class="col-md-6 mb-3">
+                                <input name="file" type="file" class="form-control-file form-data" id="exampleFormControlFile1"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault01">Ingrese el nombre de la columna X</label>
+                                <input name="x" type="text" class="form-control" id="validationDefault01"
+                                    required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="validationDefault01">Ingrese el nombre de la columna Y</label>
+                                <input name="y" type="text" class="form-control" id="validationDefault01"
+                                    required>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="validationDefault01">Tipo de Archivo</label>
+                            <select name="tipoarchivo" required>
+                                <option value="">Seleccione</option>
+                                <option value="1">Excel</option> 
+                                <option value="2">csv </option> 
+                                <option value="3">json</option>
+                                
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn boton " type="submit">Calcular</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</center>
+<br><br><br><br>
+{% endblock %}
