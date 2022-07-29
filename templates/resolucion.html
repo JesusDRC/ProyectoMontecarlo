@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+<title>Tarea Montecarlo</title>
+{% endblock %}
+
+
+{% block content %}
+<!--<div class="container text-center py-3">-->
+<!--    <h3>Ejercicio Planteado</h3>-->
+<!--    <p class="enunciado  ">Una empresa del medio, dedicada al ensamblado de aparatos de aparatos de telefonía,-->
+<!--        cuenta actualmente con 9 operarios y cada uno con una producción de 28 aparatos terminados.-->
+<!--        Se ensamblan tantos aparatos como lo exija la demanda. La demanda tiene la siguiente probabilidad-->
+<!--        estadística:</p>-->
+<!--</div>-->
+<div class="container w-50 text-center py-3">
+    <legend class="text-left header">Tabla Demanda Acumulada</legend>
+    <p>Para ello es necesario en primera instancia agregar una columna que contenga las probabilidades acumuladas</p>
+    {{data2|safe}}
+</div><br>
+<div class="container w-75 text-center py-3">
+    <p>Ahora debemos agregar los valores máximos y mínimos de las probabilidades</p>
+    <legend class="text-left header">Tabla Con Valores Mínimos y Máximos</legend>
+    {{data3|safe}}
+</div><br>
+<p class="text-center" >Se trabajarán con los mismos números aleatorios que se dieron para el ejercicio</p>
+<div class="container w-75 text-center py-3">
+    <legend class="text-left header">Tabla Con números aleatorios</legend>
+    {{nuevata|safe}}
+</div><br>
+
+<p class="text-center" >Se trabajarán con los mismos números aleatorios que se dieron para el ejercicio</p>
+<div class="container w-75 text-center py-3">
+    <legend class="text-left header">Tabla Con números aleatorios</legend>
+    {{data4|safe}}
+</div><br>
+
+<p class="text-center" >A continuación se enlistarán los resultados finales</p>
+<div class="container w-75 text-center py-3">
+    <legend class="text-left header">Resultados finales</legend>
+    La cantidad total de productos es: {{data9}}
+    El promedio de las demandas simuladas es: {{data10}}
+</div><br>
+
+
+
+
+
+{% endblock %}
